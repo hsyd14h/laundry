@@ -25,6 +25,14 @@
           </li>
           <li class="nav-header">ADMIN</li>
           <li class="nav-item">
+            <a href="/dashboard/admin" class="nav-link {{ set_active('backend.admin.index') }}">
+              <i class="nav-icon fa fa-address-book" aria-hidden="true"></i>
+              <p>
+                 Data Admin
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="/dashboard/order" class="nav-link {{ set_active(['backend.order.index', 'backend.order.create', 'backend.order.edit']) }}">
               <i class="nav-icon fa fa-shopping-bag" aria-hidden="true"></i>
               <p>
@@ -49,7 +57,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/dashboard/report" class="nav-link {{ set_active('backend.report.index') }}">
+            <a href="/dashboard/report" class="nav-link {{ set_active(['backend.report.index', 'backend.report.edit']) }}">
               <i class="nav-icon fa fa-file-excel" aria-hidden="true"></i>
               <p>
                 Laporan

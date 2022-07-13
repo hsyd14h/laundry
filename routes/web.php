@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ReportController;
@@ -59,9 +60,21 @@ Route::post('/order/insertdata', [OrderController::class, 'postSave']);
 Route::get('/order/edit/{id}', [OrderController::class, 'edit'])->name('backend.order.edit');
 Route::post('/order/update/{id}', [OrderController::class, 'update']);
 Route::get('/order/delete/{id}', [OrderController::class, 'delete']);
+Route::get('/order/detail/{id}', [OrderController::class, 'detail'])->name('backend.order.post');
 /* LAPORAN ROUTE */
 Route::get('/report', [ReportController::class, 'index'])->name('backend.report.index');
 Route::get('/report/detail/{id}', [ReportController::class, 'detail'])->name('backend.report.post');
+Route::get('/report/edit/{id}', [ReportController::class, 'edit'])->name('backend.report.edit');
+Route::post('/report/update/{id}', [ReportController::class, 'update']);
+Route::get('/report/delete/{id}', [ReportController::class, 'delete']);
 // EXPORT EXCEL
 Route::get('/exportexcel', [ReportController::class, 'exportexcel'])->name('exportexcel');
+/* ADMIN ROUTE */
+Route::get('/admin', [AdminController::class, 'index'])->name('backend.admin.index');
+Route::get('/admin/create', [AdminController::class, 'create'])->name('backend.admin.create');
+Route::post('/admin/insertdata', [AdminController::class, 'postSave']);
+Route::get('/admin/edit/{id}', [AdminController::class, 'edit'])->name('backend.admin.edit');
+Route::post('/admin/update/{id}', [AdminController::class, 'update']);
+Route::get('/admin/delete/{id}', [AdminController::class, 'delete']);
+Route::get('/admin/detail/{id}', [AdminController::class, 'detail'])->name('backend.admin.detail');
 });

@@ -1,6 +1,5 @@
 <div class="container">
-
-  <div class="col-auto">
+    <div class="col-auto">
    <a href="/dashboard/exportexcel" class="btn btn-success mb-2">Export Excel</a>
    <br/>
     </div>  
@@ -42,8 +41,12 @@
                 <span class="badge badge-success">{{ $row->status}}</span>
             </td>
             <td>
+                <a href="/dashboard/report/edit/{{ $row->id }}" class="btn btn-warning">
+                <i class="fas fa-pencil-alt"></i></a>
                 <a href="/dashboard/report/detail/{{ $row->id }}" class="btn btn-primary">
                 <i class="fas fa-folder"></i></a>
+                <a href="/dashboard/report/delete/{{ $row->id }}" class="btn btn-danger">
+                <i class="fas fa-trash"></i> </a>
             </td>
             </tr>
             @endforeach

@@ -83,6 +83,12 @@ class OrderController extends Controller
         return redirect()->route('backend.order.index');
     }
 
+    public function detail(Request $request, $id)
+    {
+        $data = OrdersLoundryModel::find($id);
+        return view('backend.order.post',compact('data'));
+    }
+
     public function delete($id)
     {
         $data = OrdersLoundryModel::find($id);

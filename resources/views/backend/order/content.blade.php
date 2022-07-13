@@ -1,5 +1,5 @@
 <div class="container">
-    <a href="/dashboard/order/create" class="btn btn-primary mb-3">Tambah +</a>
+  <a href="/dashboard/order/create" class="btn btn-primary mb-3">Tambah +</a>
     <div class="row g-3 align-items-center">
       <div class="col-auto mb-2">
         <form action="/dashboard/order" method="get">
@@ -38,6 +38,8 @@
               <i class="fas fa-pencil-alt"></i></a>
               <a href="/dashboard/order/delete/{{ $row->id }}" class="btn btn-danger">
               <i class="fas fa-trash"></i> </a>
+              <a href="/dashboard/order/detail/{{ $row->id }}" class="btn btn-primary">
+              <i class="fas fa-folder"></i></a>
             </td>
           </tr>
           @endforeach
